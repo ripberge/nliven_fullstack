@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="adminApp" ng-strict-di>
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles/main.css"> 
+  </head>
+  <body>
+    <div ng-controller="IndexController">
+      <div id="left-nav">
+        <a href="index.html">Customers</a>
+      </div>
+      <div id="main-column">
+        <table>
+          <thead>
+            <tr>
+              <td>ID</td>
+              <td>First Name</td>
+              <td>Last Name</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="customer in customers" ng-click="edit(this)">
+              <td>{{ customer.id }}</td>
+              <td>{{ customer.firstName }}</td>
+              <td>{{ customer.lastName }}</td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <button ng-click="newCustomer()">New Customer</button>
+  
+        <div id="customer-info" ng-show="customerEditVisible" ng-cloak>
+          <h2>{{ currentCustomer.id ? "Edit" : "New" }} Customer</h2>
+          <input type="text" placeholder="First Name" ng-model="currentCustomer.firstName">
+          <input type="text" placeholder="Last Name" ng-model="currentCustomer.lastName">
+          <div>
+            <button ng-click="save()">Save</button>
+            <button ng-click="cancel()">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="javascript/ng-main.js"></script>
+  </body>
+</html>

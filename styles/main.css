@@ -1,0 +1,55 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+#left-nav {
+  float: left;
+  width: 200px;
+  height: 600px;
+  background-color: lightgray;
+  padding: 15px;
+}
+
+#main-column {
+  float: left;
+  padding: 20px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+}
+
+table {
+  margin-bottom: 20px;
+}
+
+thead {
+  background-color: lightgray;
+}
+
+tbody tr {
+  cursor: pointer;
+}
+
+#customer-info {
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  padding: 15px;
+}
+
+#customer-info button {
+  margin: 10px;
+}
+
+#customer-info h2 {
+  margin-top: 0;
+}
