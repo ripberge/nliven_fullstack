@@ -41,7 +41,7 @@ angular.module('adminApp', []).
       if (apiUrl) {
         $http({ method: 'GET', url: apiUrl}).
         then(function success(response) {
-          $scope.customers = response.data.results;
+          $scope.customers = response.data;
         }, function error(err) {
           // oops
           $scope.customers = [
