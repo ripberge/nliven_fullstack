@@ -36,6 +36,9 @@ angular.module('adminApp', []).
           $scope.customers = response.data.results;
         }, function error(err) {
           // oops
+          $scope.customers = [
+            { id: 1, firstName: 'No', lastName: 'API'}
+          ];
         });
       } else {
         $scope.customers = [
@@ -51,7 +54,7 @@ angular.module('adminApp', []).
         var method = existingCustomer ? 'PUT' : 'POST';
         var url = (existingCustomer ? apiUrl + '/' + $scope.currentCustomer.id : apiUrl); 
         
-        $http({ method: method, url: url}).
+        $http({ method: method, url: url, data: $scope.currentCustomer}).
         then(function success(response) {
           getCustomers();
         }, function error(err) {
