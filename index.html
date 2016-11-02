@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="styles/main.css"> 
+    <link rel="stylesheet" href="main.css"> 
   </head>
   <body>
     <div ng-controller="IndexController">
@@ -11,6 +11,8 @@
         <a href="index.html">Customers</a>
       </div>
       <div id="main-column">
+        <div id="message" ng-show="!!message" ng-click="hideMessage()" ng-cloak>{{message}}</div>
+        
         <table>
           <thead>
             <tr>
@@ -43,6 +45,6 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script src="javascript/ng-main.js"></script>
+    <script src="ng-main.js"></script>
   </body>
 </html>

@@ -6,8 +6,8 @@ angular.module('adminApp', []).
     // Set apiUrl to your backend REST server to make API calls.  Otherwise, leave null to 
     // use demo mode.
     //
-    var apiUrl;
-    // var apiUrl = 'http://localhost:3000/api/v1/customers';
+    // var apiUrl;
+    var apiUrl = 'http://localhost:3000/api/v1/customers';
     
     $scope.newCustomer = function() {
       clearCustomer();
@@ -29,6 +29,14 @@ angular.module('adminApp', []).
       $scope.customerEditVisible = true;
     };
     
+    var showMessage = $scope.showMessage = function(msg) {
+      $scope.message = msg;
+    };
+    
+    $scope.hideMessage = function() {
+      $scope.message = null;
+    };
+    
     function getCustomers() {
       if (apiUrl) {
         $http({ method: 'GET', url: apiUrl}).
@@ -39,12 +47,13 @@ angular.module('adminApp', []).
           $scope.customers = [
             { id: 1, firstName: 'No', lastName: 'API'}
           ];
+          showMessage(err.statusText || 'Cannot get customers!');
         });
       } else {
         $scope.customers = [
           { id: 1, firstName: 'Bill', lastName: 'Gates'},
           { id: 2, firstName: 'Steve', lastName: 'Jobs'}
-        ]
+        ];
       }
     }
     
