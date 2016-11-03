@@ -6,8 +6,8 @@ angular.module('adminApp', []).
     // Set apiUrl to your backend REST server to make API calls.  Otherwise, leave null to 
     // use demo mode.
     //
-    // var apiUrl;
-    var apiUrl = 'http://localhost:3000/api/v1/customers';
+    var apiUrl;
+    // var apiUrl = 'http://localhost:3000/api/v1/customers';
     
     $scope.newCustomer = function() {
       clearCustomer();
