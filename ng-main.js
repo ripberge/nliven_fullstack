@@ -3,8 +3,8 @@ angular.module('adminApp', []).
   function($scope, $http) {
 
     //
-    // Set apiUrl to your backend REST server to make API calls.  Otherwise, leave null to 
-    // use demo mode.
+    // Set apiUrl to your backend REST server to make API calls.  A single url should respond to 
+    // GET, PUT, and POST HTTP verbs.
     //
     var apiUrl;
     // var apiUrl = 'http://localhost:3000/api/v1/customers';
@@ -50,6 +50,7 @@ angular.module('adminApp', []).
           showMessage(err.statusText || 'Cannot get customers!');
         });
       } else {
+        // For the development exercise, do not modify anything in this else block.
         $scope.customers = [
           { id: 1, firstName: 'Bill', lastName: 'Gates'},
           { id: 2, firstName: 'Steve', lastName: 'Jobs'}
@@ -71,6 +72,7 @@ angular.module('adminApp', []).
         });
         
       } else {
+        // For the development exercise, do not modify anything in this else block.
         if (!existingCustomer) {
           var newId = _.max($scope.customers, function(customer) {
               return customer.id;
